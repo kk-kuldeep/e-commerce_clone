@@ -48,18 +48,19 @@ function Payment() {
             payment_method: {
                 card: elements.getElement(CardElement)
             }
-        }).then(({ paymentIntent }) => {
+        }).then(({paymentIntent}) => {
             // paymentIntent = payment confirmation
-
-            // db
-            //   .collection('users')
-            //   .doc(user.uid)
-            //   .collection('orders')
-            //   .doc(paymentIntent.id)
+            console.log({paymentIntent});
+            console.log("{paymentIntent}");
+            db
+              .collection('users')
+              .doc(user.uid)
+              .collection('orders')
+              //.doc(paymentIntent.id)
             //   .set({
             //       basket: basket,
-            //       amount: paymentIntent.amount,
-            //       created: paymentIntent.created
+            //       //amount: paymentIntent.amount,
+            //      //created: paymentIntent.created
             //   })
 
             setSucceeded(true);
